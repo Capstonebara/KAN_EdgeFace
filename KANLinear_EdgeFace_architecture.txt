@@ -1,0 +1,505 @@
+EdgeFace_KANLinear(
+  (downsample_layers): ModuleList(
+    (0): Sequential(
+      (0): Conv2d(3, 48, kernel_size=(4, 4), stride=(4, 4))
+      (1): LayerNorm()
+    )
+    (1): Sequential(
+      (0): LayerNorm()
+      (1): Conv2d(48, 96, kernel_size=(2, 2), stride=(2, 2))
+    )
+    (2): Sequential(
+      (0): LayerNorm()
+      (1): Conv2d(96, 160, kernel_size=(2, 2), stride=(2, 2))
+    )
+    (3): Sequential(
+      (0): LayerNorm()
+      (1): Conv2d(160, 304, kernel_size=(2, 2), stride=(2, 2))
+    )
+  )
+  (stages): ModuleList(
+    (0): Sequential(
+      (0): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(48, 48, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=48)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): Identity()
+      )
+      (1): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(48, 48, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=48)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.006)
+      )
+      (2): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(48, 48, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=48)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.012)
+      )
+    )
+    (1): Sequential(
+      (0): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.018)
+      )
+      (1): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.024)
+      )
+      (2): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(96, 96, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=96)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.029)
+      )
+    )
+    (2): Sequential(
+      (0): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.035)
+      )
+      (1): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.041)
+      )
+      (2): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.047)
+      )
+      (3): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.053)
+      )
+      (4): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.059)
+      )
+      (5): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.065)
+      )
+      (6): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.071)
+      )
+      (7): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.076)
+      )
+      (8): ConvEncoder_KANLinear(
+        (dwconv): Conv2d(160, 160, kernel_size=(7, 7), stride=(1, 1), padding=(3, 3), groups=160)
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.082)
+      )
+    )
+    (3): Sequential(
+      (0): SDTAEncoder_KANLinear(
+        (convs): ModuleList(
+          (0-3): 4 x Conv2d(61, 61, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=61)
+        )
+        (norm_xca): LayerNorm()
+        (xca): XCA_KANLinear(
+          (qkv): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.088)
+      )
+      (1): SDTAEncoder_KANLinear(
+        (convs): ModuleList(
+          (0-3): 4 x Conv2d(61, 61, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=61)
+        )
+        (norm_xca): LayerNorm()
+        (xca): XCA_KANLinear(
+          (qkv): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.094)
+      )
+      (2): SDTAEncoder_KANLinear(
+        (convs): ModuleList(
+          (0-3): 4 x Conv2d(61, 61, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1), groups=61)
+        )
+        (norm_xca): LayerNorm()
+        (xca): XCA_KANLinear(
+          (qkv): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (attn_drop): Dropout(p=0.0, inplace=False)
+          (proj): LoRaLin_KAN(
+            (linear1): KANLinear(
+              (base_activation): SiLU()
+            )
+            (linear2): KANLinear(
+              (base_activation): SiLU()
+            )
+          )
+          (proj_drop): Dropout(p=0.0, inplace=False)
+        )
+        (norm): LayerNorm()
+        (pwconv1): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (act): GELU(approximate='none')
+        (pwconv2): LoRaLin_KAN(
+          (linear1): KANLinear(
+            (base_activation): SiLU()
+          )
+          (linear2): KANLinear(
+            (base_activation): SiLU()
+          )
+        )
+        (drop_path): DropPath(drop_prob=0.100)
+      )
+    )
+  )
+  (norm): LayerNorm((304,), eps=1e-06, elementwise_affine=True)
+  (head): LoRaLin_KAN(
+    (linear1): KANLinear(
+      (base_activation): SiLU()
+    )
+    (linear2): KANLinear(
+      (base_activation): SiLU()
+    )
+  )
+  (head_dropout): Dropout(p=0.5, inplace=False)
+)
